@@ -1,3 +1,4 @@
+--Destroyer Remaked Projecc
 --for inf yield creator, this is NOT a copy version of inf yield, we only remake the scripts to improve the UI, hope you understand
 if IY_LOADED and not _G.IY_DEBUG == true then
 	error("Infinite Yield is already running!",0)
@@ -11163,6 +11164,7 @@ addcmd('fling',{},function(args, speaker)
 end)
 
 addcmd('unfling',{},function(args, speaker)
+game.Players.LocalPlayer.Character.HumanoidRootPart.Anchored = true
 	local rootpart = getRoot(speaker.Character)
 	if not rootpart then return end
 	flingtbl.OldPos = rootpart.CFrame
@@ -11206,6 +11208,8 @@ addcmd('unfling',{},function(args, speaker)
 	flingtbl.OldVelocity = nil
 	flingtbl.OldPos = nil
 	flinging = false
+	wait(2)
+	game.Players.LocalPlayer.Character.HumanoidRootPart.Anchored = false
 end)
 
 addcmd('togglefling',{},function(args, speaker)
